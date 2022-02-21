@@ -1,17 +1,5 @@
 # Android's Security Model
 
-### Research
-- [ ] Dalvik VM
-- [ ] Oracle VM
-- [ ] ART VM
-- [ ] Binders
-- [ ] IPC
-- [ ] Wake locks
-- [ ] Low memory killers
-- [ ] Ashmen
-- [ ] Paranoid Networking
-- [ ] Android Linux kernel
-- [ ] Android Init library
 
 ## Introduction
 
