@@ -55,7 +55,18 @@ Note: **ART is the latest VM used by google**
 - Other mechanisms like Shared memory,Message queue are not compatible with android.
 
 #### Binders
+- The binder IPC mechanism gives a process access to other process.
+- All Android kernels have control over all processes, and therefore provide an interface for IPC. 
+- The binder IPC device is found in **/dev/binder**, implemented by the kernel device driver
 
+How is data passed between processes:
+1. Binder driver manages part of the memory of each process involved.
+2. These manages chunks are readonly to the process and can only be written via the kernel module.
+3. Process A sends a message, the binder allocates some memory space in the receiving process's memory
+4. Message is copied from the sender's allocated memory to the receiver's allocated memory.
+5. a short message queue is sent to the receiving process telling it ,the memory address location to receive the message
+6. The receipient can then access the message because its in its own address space
+7. When a process is done with the message, it notifies the binder driver to mark the allocated memory free
 
 
 
